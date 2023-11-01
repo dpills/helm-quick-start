@@ -1,0 +1,4 @@
+api:
+  image: dpills/helm-api:v1.0.0
+  replicas: 1
+  static_token: null
