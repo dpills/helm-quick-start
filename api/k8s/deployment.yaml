@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: helm-guide-api
-          image: dpills/helm-guide-api:v1.0.0
+          image: dpills/helm-api:v1.0.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8000
