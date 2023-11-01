@@ -1,4 +1,4 @@
 api:
   image: dpills/helm-api:v1.0.0
   replicas: 1
-  static_token: null
+  static_token: null # Pass this in with --set static_token=XXX
