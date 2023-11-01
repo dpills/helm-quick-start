@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: helm-guide-api
+  name: helm-guide-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: helm-guide-api
+  template:
+    metadata:
+      labels:
+        app: helm-guide-api
+    spec:
+      containers:
+        - name: helm-guide-api
+          image: dpills/helm-guide-api:v1.0.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
+              protocol: TCP
+          envFrom:
+            - secretRef:
+                name: helm-guide-api-secret
+          resources:
+            limits:
+              cpu: "1"
+              memory: 1Gi
+            requests:
+              cpu: "1"
+              memory: 1Gi
