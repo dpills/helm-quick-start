@@ -7,7 +7,7 @@ RUN poetry export -f requirements.txt --output requirements.txt --without-hashes
 FROM python:3.11-slim-bookworm
 
 COPY --from=requirements-stage /requirements.txt /requirements.txt
-COPY ./app /app
+COPY ./main.py /main.py
 
 RUN python3 -m pip install --no-cache-dir --upgrade -r requirements.txt
 EXPOSE 8000
